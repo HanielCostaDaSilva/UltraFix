@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# UltraFlix - Seu Guia de Filmes
+</hr>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O UltraFlix é um aplicativo web em React projetado para fornecer aos usuários informações atualizadas sobre os filmes em cartaz no momento. Ele utiliza a API themoviedb para buscar e exibir detalhes dos filmes, permitindo que os usuários explorem informações básicas sobre os lançamentos mais recentes.
 
-## Available Scripts
+## Objetivos
+</hr>
 
-In the project directory, you can run:
+- **Aproveita ao máximo o React:**  O principal deste projeto foi conhecer ainda mais das ferramentas que o react disponibiliza, como rotas, effects, componets e etc.
+- **Integração de API:**  Aprender a integrar APIs ao projeto. Fazer requisições e tratá-las.
+- **Criar componentes dinâmicos:** Conseguir criar componentes que não precisam se inseridos manualmente, mas sendo alimentados pelo próprio sistema.
+## Atuais Funcionalidades
+</hr>
 
-### `npm start`
+- **Navegar por Filmes:** Explore uma lista de filmes que estão atualmente nos cinemas.
+- **Detalhes do Filme:** Clique em um filme para ver mais informações, incluindo título, data de lançamento, sinopse e avaliações.
+- **Design Responsivo:** O aplicativo é responsivo e funciona bem em vários tamanhos de tela, desde desktop até dispositivos móveis.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API
+</hr>
+Este projeto foi construído utilizando a API themoviedb.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### TheMovieDB
+</hr>
+![themoviedb](https://www.themoviedb.org/assets/2/v4/logos/
+stacked-blue-01c7f39560d74df053b798ac0f2c7c98eab84e9750579d9d53ed4e2f7c3e0077.svg)
+<a href='https://www.themoviedb.org'>Acessar <a>
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+O UltraFlix se integra com a API themoviedb para buscar informações sobre filmes. Para usar a API, cadastre-se em uma conta gratuita no [site themoviedb](https://www.themoviedb.org/) e obtenha uma chave de API. Adicione sua chave de API ao arquivo `.env` na raiz do projeto.
