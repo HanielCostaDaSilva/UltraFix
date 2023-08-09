@@ -1,0 +1,34 @@
+.notFound{
+    height: calc(100vh - 20vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 50px;
+    color: white;
+    cursor: default;
+
+}
+
+.backHome{
+    margin-top: 20px;
+    color:grey;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+
+.backHome:hover{
+    color:rgb(123, 123, 181);
+}
+
+h1{
+    font-size: 3em;
+    margin: 20px 0;
+}
+
+h2{
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}

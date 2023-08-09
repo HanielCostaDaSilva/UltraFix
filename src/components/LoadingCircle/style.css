@@ -1,0 +1,37 @@
+/* style.css */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg) ;
+    }
+    50%{
+        transform: rotate(180deg) ;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 100%;
+    color: white;
+    font-size: 100%;
+}
+
+.loading-circle {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 7px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid white;
+    animation: spin 2s linear infinite;
+    margin: 15px 0;
+}
