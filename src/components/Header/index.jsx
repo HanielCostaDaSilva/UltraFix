@@ -7,7 +7,7 @@ function Header(){
         <header id='Cabecalho'>
         <div>
             <Link id='Logo' to='/'> 
-            <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="UltraFix" />
+            <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="UltraFix Logo" />
             <p>UltraFlix</p>
             </Link >
         </div>

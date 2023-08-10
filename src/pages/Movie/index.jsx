@@ -60,9 +60,10 @@ function Movie(){
         <div className='moviePosterContainer'> 
             <img 
             src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} 
-            className='moviePosterBackground' 
+            className='moviePosterBackground'
+            alt={`${movie.title}`}
             />
-        <img
+            <img
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt={`capa ${movie.title}`}
             className="moviePoster"
@@ -70,7 +71,7 @@ function Movie(){
          <p className='movieTitleDescription'>{movie.title}</p>
         </div>
         {/*  Referente as informações do Filme Filme*/}
-        
+
         <section className='rate'>
         <h3 className='sectionTitle'>Avaliação </h3>
         <span className='sinopseText'>{movie.vote_average}/10</span>
