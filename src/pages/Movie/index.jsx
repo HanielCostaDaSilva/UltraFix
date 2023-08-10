@@ -1,6 +1,6 @@
 import './style.css';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom'
 
 import api from '../../services/API';
@@ -45,7 +45,7 @@ function Movie(){
     const [logading, setLoad] = useState(true) //carregando a página
     useEffect(()=>{
         loadFilme(id,setMovie,setLoad);
-    },[])
+    },[id])
     if (logading){
         return(
                 <LoadingCircle />

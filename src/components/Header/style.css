@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: center;
     flex: width(100%);
-    font-size: calc(--tamanhoFonte + 0.3rem);
+    font-size: calc(var(--tamanhoFonte) + 0.3rem);
 }
 #Logo img{
     flex-grow: 2;
