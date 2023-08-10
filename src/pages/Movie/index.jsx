@@ -5,6 +5,7 @@ import {useParams} from 'react-router-dom'
 
 import api from '../../services/API';
 import LoadingCircle from '../../components/LoadingCircle';
+import PageTitle from '../../components/PageTitle';
 
 //API url Example: https://api.themoviedb.org/3/movie/550?api_key=71ae871274f1b2e455807128f37d9303&language=pt-BR
 
@@ -54,6 +55,8 @@ function Movie(){
     
     return (
     <div className='movieDescription'>
+        <PageTitle title={`${movie.title}`} />
+        {/*  Referente a Imagem e o título do Filme*/}
         <div className='moviePosterContainer'> 
             <img 
             src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} 
@@ -66,8 +69,9 @@ function Movie(){
         />
          <p className='movieTitleDescription'>{movie.title}</p>
         </div>
-
-        <section className='Avaliação'>
+        {/*  Referente as informações do Filme Filme*/}
+        
+        <section className='rate'>
         <h3 className='sectionTitle'>Avaliação </h3>
         <span className='sinopseText'>{movie.vote_average}/10</span>
         </section>

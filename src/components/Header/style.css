@@ -1,6 +1,7 @@
 :root{
     --tamanhoFonte: 2rem;
     --hooverColor:rgb(198, 198, 198);
+    --CabecalhoColor: white;
 }
 
 #Cabecalho{
@@ -13,21 +14,32 @@
     padding: 1% 2%;
     background: linear-gradient(69deg, rgba(50,34,143,1) 32%, rgba(3,20,33,1) 100%);
     font-size: var(--tamanhoFonte);
+    color: var(--CabecalhoColor);
 }
 
-#Logo, #Favorite {
+#Cabecalho a, #Logo{
     color: white;
     text-decoration: none;
     transition: ease 0.3s all;
 }
 
+#Logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: width(100%);
+    font-size: calc(--tamanhoFonte + 0.3rem);
+}
+#Logo img{
+    flex-grow: 2;
+    width:15vh;
+    height:15vh ;
+}
 
-#Logo:hover, #Favorite:hover {
+#Cabecalho a:hover, #Logo:hover {
     font-style: bolder;
     font-size:calc(var(--tamanhoFonte) + 0.4rem) ;
     color: var(--hooverColor);
+    opacity: 0.8;
 }
 
-#Logo{
-    font-size: calc(--tamanhoFonte + 0.3rem);
-}

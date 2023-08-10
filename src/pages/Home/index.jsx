@@ -4,6 +4,7 @@ import MovieCard from "../../components/MovieCard";
 
 import './style.css';
 import LoadingCircle from "../../components/LoadingCircle";
+import PageTitle from "../../components/PageTitle";
 async function loadMovies(setMovies, setLoad) {
     try {
         const response = await api.get("movie/now_playing", {
@@ -38,6 +39,8 @@ function Home() {
     
     return (
         <section id='Home'>
+            <PageTitle title='UltraFix' />
+
             <div id="Newmovies" className="movieSection">
                 {/* Renderize os filmes aqui */}
                 {movies.map(movie => (

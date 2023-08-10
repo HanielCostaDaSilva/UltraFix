@@ -2,10 +2,18 @@ import './style.css';
 import { Link } from 'react-router-dom';
 
 function Header(){
+    
     return (
         <header id='Cabecalho'>
-            <Link id='Logo' to='/'> UltraFlix </Link >
-            <Link id='Favorite' to='/favorites'> Favorites </Link >
+        <div>
+            <Link id='Logo' to='/'> 
+            <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="UltraFix" />
+            <p>UltraFlix</p>
+            </Link >
+        </div>
+            <Link id='MoviesLink' to='/'> Filmes </Link >
+            <Link id='SeriesLink' to='/'> Séries </Link >
+            <Link id='FavoriteLink' to='/favorites'> Favoritos </Link >
         </header>
     )
 }
