@@ -16,9 +16,9 @@ O UltraFlix é um aplicativo web em React projetado para fornecer aos usuários 
 - **Detalhes do Filme:** Clique em um filme para ver mais informações, incluindo título, data de lançamento, sinopse e avaliações.
 - **Design Responsivo:** O aplicativo é responsivo e funciona bem em vários tamanhos de tela, desde desktop até dispositivos móveis.
 
-## API
+## Ferramentas
 </hr>
-Este projeto foi construído utilizando a API themoviedb.
+Este projeto foi construído utilizando a API themoviedb e implantado pelo Netlify.
 
 ### TheMovieDB
 </hr>
@@ -26,6 +26,8 @@ Este projeto foi construído utilizando a API themoviedb.
 <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg" alt="Logo do TMDB" width="100">
 </a>
 
-
-
-O UltraFlix se integra com a API themoviedb para buscar informações sobre filmes. Para usar a API, cadastre-se em uma conta gratuita no [site themoviedb](https://www.themoviedb.org/) e obtenha uma chave de API. Adicione sua chave de API ao arquivo `.env` na raiz do projeto.
+### Netlify
+</hr>
+<a href='https://www.themoviedb.org' style=" background:'rgb(255,255,255)' ">
+<img src="https://www.vectorlogo.zone/logos/netlify/netlify-ar21.svg" alt="Logo do Netlify" width="100" >
+</a>
