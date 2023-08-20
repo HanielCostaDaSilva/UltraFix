@@ -35,6 +35,11 @@
     height:15vh ;
 }
 
+.headerChoices{
+    padding: 30px;
+    width: 400px;
+}
+
 #Cabecalho a:hover, #Logo:hover {
     font-style: bolder;
     font-size:calc(var(--tamanhoFonte) + 0.4rem) ;

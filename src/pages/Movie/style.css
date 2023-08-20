@@ -3,10 +3,8 @@
     --movieDescpritionHeight: calc(100vh - 20vh);
     --boxImageHeight: calc( var(--movieDescpritionHeight) - 10vh);
 }
-.movieDescription{
+.movie{
     display: flex;
-    height: 100vh;
-    width: 100%;
     flex-direction: column;
 }
 .moviePosterContainer{
@@ -46,4 +44,80 @@
 
 .movieDescription{
     color: white;
+}
+
+.boxButtons{
+    display: flex;
+    width:50%;
+    margin-top: 10px;
+}
+button{
+    height: 4rem;
+    width: 100%;
+    font-size: 80%;
+    border: none;
+    background-color: rgba(74, 45, 178, 0.8);
+    color: white;
+    transition: all ease 0.5s;
+    cursor:pointer;
+    border-radius: 5%;
+}
+
+button:hover{
+    padding: 15px;
+    background-color: rgba(56, 34, 135, 0.9);
+    font-size: 84%;
+    outline: none;
+
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+.movieDescription {
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+        'T T '
+        'R G '
+        'S S ';
+    grid-gap: 20px;
+    grid-template-columns: 1fr 4fr;
+
+}
+
+.trailer{
+    grid-area: T;
+}
+
+.rate{
+    grid-area: R;
+}
+.genres{
+    grid-area: G;
+}
+.sinopse{
+    grid-area: S;
+}
+
+.rate, .genres,.sinopse{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 20vh;
+    padding: 10px;
+    cursor: default;
+}
+
+.sinopseText{
+    font-size: 2rem;
+    text-align: justify;
+}
+
+.sectionTitle{
+    background-color: rgb(143, 143, 143);
+    width: 100%;
+    color: black;
 }

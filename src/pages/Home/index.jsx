@@ -44,7 +44,7 @@ function Home() {
             <PageTitle title='UltraFix' />
             <section id="Newmovies" className="movieSection">
                 {/* Renderize os novos filmes aqui */}
-                <CardCarrousel movies={movies} sectionTopic='Filmes recentes' />
+                <CardCarrousel movies={movies} sectionTopic='Novidade' />
             </section>
         </section>
     );

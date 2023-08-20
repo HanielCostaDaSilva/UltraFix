@@ -11,8 +11,10 @@ function Header(){
             <p>UltraFlix</p>
             </Link >
         </div>
+        <div className='headerChoices'>
+            
+        </div>
             <Link id='MoviesLink' to='/'> Filmes </Link >
-            <Link id='SeriesLink' to='/'> Séries </Link >
             <Link id='FavoriteLink' to='/favorites'> Favoritos </Link >
         </header>
     )
