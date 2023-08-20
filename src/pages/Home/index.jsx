@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/API";
-import MovieCard from "../../components/MovieCard";
 
 import './style.css';
 import LoadingCircle from "../../components/LoadingCircle";
 import PageTitle from "../../components/PageTitle";
+import CardCarrousel from "../../components/CardCarrousel";
+
+
 async function loadMovies(setMovies, setLoad) {
     try {
         const response = await api.get("movie/now_playing", {
@@ -40,13 +42,10 @@ function Home() {
     return (
         <section id='Home'>
             <PageTitle title='UltraFix' />
-
-            <div id="Newmovies" className="movieSection">
-                {/* Renderize os filmes aqui */}
-                {movies.map(movie => (
-                        <MovieCard key = {movie.id} movie={movie} />
-                ))}
-            </div>
+            <section id="Newmovies" className="movieSection">
+                {/* Renderize os novos filmes aqui */}
+                <CardCarrousel movies={movies} sectionTopic='Filmes recentes' />
+            </section>
         </section>
     );
 }
