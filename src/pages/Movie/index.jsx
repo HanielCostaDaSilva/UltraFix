@@ -2,12 +2,9 @@ import './style.css';
 
 import React, { useEffect, useState } from 'react';
 import {useParams,useNavigate} from 'react-router-dom'
-
 import api from '../../services/API';
 import LoadingCircle from '../../components/LoadingCircle';
 import PageTitle from '../../components/PageTitle';
-import { Alert } from 'react-bootstrap';
-
 
 //API url Example: https://api.themoviedb.org/3/movie/550?api_key=71ae871274f1b2e455807128f37d9303&language=pt-BR
 
@@ -16,8 +13,24 @@ function Movie(){
     const {id} = useParams();
     const [movie, setMovie] = useState({});
     const [genres, setGenres]= useState([]);
-    const [logading, setLoad] = useState(true); //carregando a página
+    const [loading, setLoading] = useState(true); //carregando a página
     const navigate= useNavigate();
+
+    function salvarFavorito() {
+      const favoritesList = localStorage.getItem("@ultraflix");
+      
+      let savedMovies = JSON.parse(favoritesList) || [];
+      
+      const hasMovie = savedMovies.some((movieSaved) => {
+        return movieSaved.id === movie.id;
+      });
+      if (hasMovie){
+        return;
+      }
+        savedMovies.push(movie);
+        localStorage.setItem('@ultraflix', JSON.stringify(savedMovies));
+        return;
+  }
 
     useEffect(() => {
         async function loadFilme() {
@@ -29,11 +42,10 @@ function Movie(){
                     }
                 });
 
-                console.log(response.data);
                 setMovie(response.data);
                 setGenres(response.data.genres);
                 setTimeout(() => {
-                    setLoad(false);
+                    setLoading(false);
                 }, 100);
 
             } catch (error) {
@@ -42,7 +54,7 @@ function Movie(){
                     navigate('/', { replace: true });
                     return;
                 }
-                setLoad(false);
+                setLoading(false);
             }
         }
 
@@ -50,7 +62,8 @@ function Movie(){
 
     }, [id, navigate]);
     
-    if (logading){
+
+    if (loading){
         return(
                 <LoadingCircle />
         )
@@ -69,11 +82,9 @@ function Movie(){
       alt={`capa ${movie.title}`}
       className="moviePoster"
     />
-    <div>
+    <div className='movieTitleDescriptionBox'>
       <p className="movieTitleDescription">{movie.title}</p>
-      <div className="boxButtons">
-        <button>Salvar</button>
-      </div>
+      <button className='saveMovieButton'onClick={salvarFavorito}>Salvar</button>
     </div>
   </div>
   <section className="movieDescription">

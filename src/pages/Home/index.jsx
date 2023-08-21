@@ -16,7 +16,7 @@ async function loadMovies(setMovies, setLoad) {
                 page: 1
             }
         });
-        setMovies(response.data.results.slice(0, 10));
+        setMovies(response.data.results.slice(0, 13));
         setTimeout(()=>{
             setLoad(false);
         },100);

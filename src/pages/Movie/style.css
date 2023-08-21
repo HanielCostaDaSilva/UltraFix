@@ -37,9 +37,10 @@
 }
 
 .movieTitleDescription {
-    padding: 10px;
+    padding: 30px;
     color: white;
-    font-size: 5rem;
+    font-size: 4.5rem;
+    
 }
 
 .movieDescription{
@@ -47,9 +48,18 @@
 }
 
 .boxButtons{
-    display: flex;
-    width:50%;
     margin-top: 10px;
+}
+.saveMovieButton{
+    width: 500px;
+}
+.movieTitleDescriptionBox{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: right;
+    width: 70vw;
+    
 }
 button{
     height: 4rem;
