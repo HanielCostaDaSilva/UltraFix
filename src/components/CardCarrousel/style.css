@@ -10,8 +10,9 @@
 }
 
 .carrouselSection{
-    height: 90vh;
+    height: 900px;
     width: 98vw;
+    margin: 10px 0px;
 }
 
 /* Estilos para as setas personalizadas */

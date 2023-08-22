@@ -9,7 +9,7 @@ function CardCarrousel({ movies, sectionTopic }) {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 500,
+        speed: Math.floor(Math.random() *(2000 - 600) + 600),
         slidesToShow: 3,
         slidesToScroll: 2,
         responsive: [
@@ -66,7 +66,8 @@ function CardCarrousel({ movies, sectionTopic }) {
             <h3 className="sectionTopic"> {sectionTopic} </h3>
             <Slider {...settings}>
                 {movies.map((movie) => (
-                    <div key={movie.id} className="slide-item">
+                    <div key={`${movie.id+ sectionTopic}`} 
+                    className="slide-item">
                         <CardComponent movie={movie} />
                     </div>
                 ))}
