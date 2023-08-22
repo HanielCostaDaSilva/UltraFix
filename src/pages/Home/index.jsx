@@ -109,7 +109,7 @@ function Home() {
                  {
                     moviesByGenre.map((movieByGenre) => (
                     <section 
-                    key={`${movieByGenre.genreName + movieByGenre.genreId}`} 
+                    key={`${movieByGenre.genreName + Math.floor(Math.random() * 50)}`} 
                     id={`${movieByGenre.genreName}Section`} 
                     className={`movieSection ${movieByGenre.genreName}`}>
                     <CardCarrousel movies={movieByGenre.movies} sectionTopic={movieByGenre.genreName}/>

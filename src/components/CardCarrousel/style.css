@@ -15,22 +15,43 @@
     margin: 10px 0px;
 }
 
-/* Estilos para as setas personalizadas */
+/* CSS para as setas personalizadas */
 .custom-prev-arrow::before,
 .custom-next-arrow::before {
     position: absolute;
-    top: 50%; 
+    top: 50%;
     z-index: 1000;
-    transform: translateY(-50%); /* Ajusta para o centro vertical */
+    transform: translateY(-50%);
     font-size: 40px !important;
     opacity: 0.9;
     transition: all ease 0.4s;
 }
 
 .custom-prev-arrow {
-    left: 40px; 
+    left: 40px;
 }
 
 .custom-next-arrow {
-    right: 40px; 
+    right: 40px;
+}
+
+/* CSS para tornar o Slider responsivo */
+@media (max-width: 768px) {
+    .carrouselSection {
+        height: auto;
+        margin: 0px 0px;
+    }
+
+    .custom-prev-arrow,
+    .custom-next-arrow {
+        display: none;
+    }
+}
+
+/* CSS para ajustar o tamanho das imagens dos filmes no Slider */
+@media (max-width: 768px) {
+    .slick-slide img {
+        max-width: 100%;
+        height: auto;
+    }
 }

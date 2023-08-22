@@ -47,3 +47,23 @@
     opacity: 0.8;
 }
 
+
+@media (max-width: 768px) {
+    #Cabecalho {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #Logo {
+        margin-bottom: 20px;
+    }
+
+    .headerChoices {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #Cabecalho a {
+        margin: 10px;
+    }
+}
