@@ -10,7 +10,7 @@ function Favorites() {
 
     function removeFavorite(movieId) {
         const moviesFilter = movies.filter((movie) => {
-            return (movie.id != movieId)
+            return (movie.id !== movieId)
         })
         setMovies( moviesFilter)
         localStorage.setItem("@ultraflix", JSON.stringify(moviesFilter));
@@ -27,7 +27,7 @@ function Favorites() {
 
     return (
         <div className='favoriteMovies'>
-            {(movies.length ==0 ? <h1> Você não possui nenhum filme Salvo</h1> :"")}
+            {(movies.length ===0 ? <h1> Você não possui nenhum filme Salvo</h1> :"")}
             
             {movies.map(movie => {
                 return (

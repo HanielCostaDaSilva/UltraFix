@@ -121,7 +121,7 @@ function Movie() {
 
         <section className=" descriptionBoxes sinopse">
           <h3 className="sectionTitle">Sinopse</h3>
-          <span className="sinopseText">{(movie.overview == "" ? "Sem sinopse" : movie.overview)}</span>
+          <span className="sinopseText">{(movie.overview === "" ? "Sem sinopse" : movie.overview)}</span>
         </section>
       </section>
     </div>
