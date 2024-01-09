@@ -1,0 +1,65 @@
+.favoriteMovies {
+  display: grid;
+  /* Enable grid layout */
+  grid-template-columns: repeat(3, 1fr);
+  /* Create 4 columns with equal width */
+  grid-gap: 1rem;
+  /* Add spacing between grid items */
+  margin: 2rem auto;
+  /* Center the grid horizontally */
+}
+
+/* Add this CSS to your existing style.css file */
+.favoriteMovies button {
+  /* Appearance */
+  background-color: #f44336;
+  /* Red background */
+  color: white;
+  /* White text */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* Positioning */
+  margin-top: 10px;
+
+  /* Transitions */
+  transition: all 0.2s ease-in-out;
+}
+
+.favoriteMovies button:hover {
+  background-color: #e53935;
+  /* Darker red on hover */
+}
+
+h1 {
+  /* Centralizar o texto horizontalmente */
+  width: 100%;
+  position: absolute;
+  top: 50;
+  right: 0;
+  text-align: center;
+  color: #f5f5f5;
+
+  /* Aumentar o tamanho do texto para destaque */
+  font-size: 3.5rem;
+
+  margin-top: 20px;
+}
+
+/* Adjust grid items for smaller screens */
+@media (max-width: 768px) {
+  .favoriteMovies {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .favoriteMovies {
+    grid-template-columns: 1fr;
+    /* 1 column on very small screens */
+  }
+}

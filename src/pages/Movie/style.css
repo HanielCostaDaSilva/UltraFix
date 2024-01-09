@@ -1,116 +1,100 @@
-/* style.css */
 :root {
-    --movieDescpritionHeight: calc(100vh - 20vh);
-    --boxImageHeight: calc( var(--movieDescpritionHeight) - 10vh);
+    --movieDescriptionHeight: calc(100vh - 20vh);
+    --boxImageHeight: calc(var(--movieDescriptionHeight) - 10vh);
 }
-.movie{
+
+.movie {
     display: flex;
     flex-direction: column;
 }
-.moviePosterContainer{
+
+.moviePosterContainer {
     position: relative;
     height: var(--boxImageHeight);
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
+
 .moviePosterBackground {
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: -1; /* Z-index inferior */
-    width: 100%; 
-    height: 100%; 
+    z-index: -1;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0.5; 
-    transform: translate(-50%, -50%); 
+    opacity: 0.5;
+    transform: translate(-50%, -50%);
     object-fit: cover;
-
 }
 
 .moviePoster {
     width: 20vw;
-    height: var(--boxImageSize);
+    height: var(--boxImageHeight);
     object-fit: cover;
-    padding: 10px 10px;
+    padding: 10px;
 }
 
 .movieTitleDescription {
     padding: 30px;
     color: white;
     font-size: 4.5rem;
-    
 }
 
-.movieDescription{
-    color: white;
-}
-
-.boxButtons{
-    margin-top: 10px;
-}
-.saveMovieButton{
-    width: 100%;
-}
-.movieTitleDescriptionBox{
+.movieTitleDescriptionBox {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
     width: 70vw;
-    
 }
-button{
-    height: 4rem;
+
+.saveMovieButton {
     width: 100%;
+    height: 4rem;
     font-size: 80%;
     border: none;
     background-color: rgba(74, 45, 178, 0.8);
     color: white;
     transition: all ease 0.5s;
-    cursor:pointer;
+    cursor: pointer;
     border-radius: 5%;
 }
 
-button:hover{
+.saveMovieButton:hover {
     padding: 15px;
     background-color: rgba(56, 34, 135, 0.9);
     font-size: 84%;
     outline: none;
+}
+
+button {
+    width: 100%;
+    background-color: rgba(74, 45, 178, 0.8);
 
 }
-button a{
+
+button a {
     text-decoration: none;
     color: white;
 }
+
 .movieDescription {
-    height: 100%;
     display: grid;
     grid-template-areas:
-        'T T '
-        'R G '
-        'S S ';
+        'T T'
+        'R G'
+        'S S';
     grid-gap: 20px;
     grid-template-columns: 1fr 4fr;
-
+    color: white;
 }
 
-.trailer{
-    grid-area: T;
-}
-
-.rate{
-    grid-area: R;
-}
-.genres{
-    grid-area: G;
-}
-.sinopse{
-    grid-area: S;
-}
-
-.rate, .genres,.sinopse{
+.trailer,
+.rate,
+.genres,
+.sinopse {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,46 +105,90 @@ button a{
     cursor: default;
 }
 
-.sinopseText{
-    font-size: 2rem;
-    text-align: justify;
-}
-
-.sectionTitle{
+.sectionTitle {
     background-color: rgb(143, 143, 143);
     width: 100%;
     color: black;
 }
 
-  /* Estilos para telas menores (responsividade) */
-  @media (max-width: 768px) {
+.sinopse{
+    grid-area: S;
+}
+.sinopseText {
+    font-size: 2rem;
+    text-align: justify;
+}
+
+.trailer {
+    grid-area: T;
+    width: 100%;
+    padding: 15px;
+}
+
+.trailer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    background-color: rgba(74, 45, 178, 0.8);
+    border: none;
+    border-radius: 5%;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.trailer:hover {
+    background-color: rgba(56, 34, 135, 0.9);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.trailer:focus {
+    outline: none;
+}
+
+.trailer:active {
+    transform: scale(0.95);
+}
+
+
+.trailer:hover .playIcon {
+    opacity: 1;
+}
+/* Responsividade */
+@media (max-width: 768px) {
     .moviePosterContainer {
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
     }
-  
+
     .moviePoster {
-      width: 50%;
+        width: 50%;
     }
-  
+
     .movieTitleDescriptionBox {
-      text-align: center;
-      align-items: center;
-      margin-top: 10px;
+        text-align: center;
+        align-items: center;
+        margin-top: 10px;
     }
-  
+
     .movieDescription {
-      display: flex;
-      height: 100vh;
-      width: 100%;
-      flex-direction: column;
-      margin-top: 20px;
-      font-size: 3rem;
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 20px;
+        font-size: 3rem;
     }
-    
-    .descriptionBoxes{
+
+    .descriptionBoxes {
         height: 40%;
     }
-  }
-  
+}
+

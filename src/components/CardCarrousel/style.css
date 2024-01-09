@@ -10,10 +10,12 @@
 }
 
 .carrouselSection{
-    height: 900px;
+    height: 100%;
     width: 98vw;
     margin: 10px 0px;
 }
+
+
 
 /* CSS para as setas personalizadas */
 .custom-prev-arrow::before,

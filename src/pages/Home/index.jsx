@@ -7,7 +7,7 @@ import PageTitle from "../../components/PageTitle";
 import CardCarrousel from "../../components/CardCarrousel";
 import getGenreList from "../../services/getGenres";
 
-async function loadMoviesByGenre(genreId,genreName, setMoviesByGenre) {
+async function loadMoviesByGenre(genreId, genreName, setMoviesByGenre) {
     try {
         const response = await api.get('discover/movie', {
             params: {
@@ -53,6 +53,24 @@ async function loadRecentMovies(setMovies) {
     }
 }
 
+function shuffle(array) {
+    var m = array.length, t, i;
+
+    // While there remain elements to shuffle…
+    while (m) {
+
+        // Pick a remaining element…
+        i = Math.floor(Math.random() * m--);
+
+        // And swap it with the current element.
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+    }
+
+    return array;
+}
+
 function Home() {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true); // Carregando a página
@@ -65,18 +83,27 @@ function Home() {
 
         // Função para buscar e carregar os gêneros
         async function fetchGenres() {
-            genres = await getGenreList();
+            try {
+                const genresList = await getGenreList();
+                console.log(genresList);
+                genres = shuffle(genresList).slice(0, 5);
+                console.log(genres);
+            } catch (error) {
+                alert("Error loading genres:", error);
+            }
         }
 
         // Carrega filmes por gênero
         async function fetchMoviesByGenres() {
             await fetchGenres(); // Aguarde a conclusão da função fetchGenres para definir 'genres'.
+            console.log(genres);
             const genrePromises = genres.map(async (genre) => {
+                console.log(genre)
                 await loadMoviesByGenre(genre.id, genre.name, setMoviesByGenre);
             });
             await Promise.all(genrePromises);
         }
-        
+
         fetchMoviesByGenres();
 
         setTimeout(() => {
@@ -97,7 +124,7 @@ function Home() {
                 {/* Renderize os novos filmes aqui */}
                 <CardCarrousel movies={movies} sectionTopic='Novidade' />
             </section>
-                {/*
+            {/*
                     {
                         genreId:1,
                         genreName:'Comedia',
@@ -106,16 +133,16 @@ function Home() {
                         }
                     }
                  */}
-                 {
-                    moviesByGenre.map((movieByGenre) => (
-                    <section 
-                    key={`${movieByGenre.genreName + Math.floor(Math.random() * 50)}`} 
-                    id={`${movieByGenre.genreName}Section`} 
-                    className={`movieSection ${movieByGenre.genreName}`}>
-                    <CardCarrousel movies={movieByGenre.movies} sectionTopic={movieByGenre.genreName}/>
-                    </section>  ))
-                }
-   
+            {
+                moviesByGenre.map((movieByGenre) => (
+                    <section
+                        key={`genre-${movieByGenre.genreId}-${movieByGenre.genreName}`}
+                        id={`${movieByGenre.genreName}Section`}
+                        className={`movieSection ${movieByGenre.genreName}`}>
+                        <CardCarrousel movies={movieByGenre.movies} sectionTopic={movieByGenre.genreName} />
+                    </section>))
+            }
+
         </section>
     );
 }
