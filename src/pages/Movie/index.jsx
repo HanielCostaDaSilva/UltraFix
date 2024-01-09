@@ -1,5 +1,5 @@
 import './style.css';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'
@@ -101,9 +101,10 @@ function Movie() {
         {/* Trailer button, ao clicado direcionará o usuário para ao youtbe */}
 
         <button className="trailer">
-          <a href={`https://youtube.com/results?search_query=${movie.title}+trailer`} target='_blank' rel='external'>
+          <a href={`https://youtube.com/results?search_query=${movie.title}+trailer`} target='_blank' rel='noreferrer'>
             Trailer
           </a>
+
         </button>
         {/* Capa principal do filme */}
 

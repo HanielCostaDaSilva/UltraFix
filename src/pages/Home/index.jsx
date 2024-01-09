@@ -73,9 +73,9 @@ function shuffle(array) {
 
 function Home() {
     const [movies, setMovies] = useState([]);
-    const [loading, setLoading] = useState(true); // Carregando a página
+    const [loading, setLoading] = useState(true);
     const [moviesByGenre, setMoviesByGenre] = useState([]);
-    let genres;
+    const [genres, setGenres] = useState([]);
 
     useEffect(() => {
         // Carrega os filmes mais recentes
@@ -86,7 +86,7 @@ function Home() {
             try {
                 const genresList = await getGenreList();
                 console.log(genresList);
-                genres = shuffle(genresList).slice(0, 5);
+                setGenres(shuffle(genresList).slice(0, 5));
                 console.log(genres);
             } catch (error) {
                 alert("Error loading genres:", error);
@@ -95,10 +95,10 @@ function Home() {
 
         // Carrega filmes por gênero
         async function fetchMoviesByGenres() {
-            await fetchGenres(); // Aguarde a conclusão da função fetchGenres para definir 'genres'.
+            await fetchGenres();
             console.log(genres);
             const genrePromises = genres.map(async (genre) => {
-                console.log(genre)
+                console.log(genre);
                 await loadMoviesByGenre(genre.id, genre.name, setMoviesByGenre);
             });
             await Promise.all(genrePromises);
@@ -109,7 +109,7 @@ function Home() {
         setTimeout(() => {
             setLoading(false);
         }, 100);
-    }, []);
+    }, [genres]); // Adiciona genres como uma dependência para evitar o aviso de exhaustive-deps
 
     if (loading) {
         return (
